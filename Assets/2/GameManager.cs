@@ -11,13 +11,13 @@ namespace Pong2
 	}
 	public class GameManager : MonoBehaviour
 	{
-		public GameState gameState = 0;
+		public GameState gameState;
 		public GameObject startScreen;
 		public Ball ball;
 
 		void Update()
 		{
-			if (gameState == 0)
+			if (gameState == GameState.StartState)
 			{
 				if (Input.anyKey)
 				{

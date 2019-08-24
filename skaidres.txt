@@ -1,0 +1,79 @@
+Camera - pagrindiniai parametrai
+
+GameObjects:
+hierarchija
+transformo position vs local position ir pan.
+
+2D objektai: UI vs SpriteRenderers:
+UI - text, images,
+SpriteRenderers - paveiksliukai (fizika ir t.t.)
+
+RectTransform vs Transform
+text atributes
+
+Rect transformo coordinates ir kaip pasidaryti toki ui
+
+SpriteRenderer - paddles
+boxcollideriai - colliders vs triggers
+
+fizika - paddle - boxcollideriai
+fizika - ball - rigidbody2d
+fizika - walls and gameover area
+
+layers vs. tags
+
+empty gameobjects for managers and etc
+
+scriptai:
+monobehaviour, main functions, variables, functions
+tipai int string text gameobject anycomponent
+public vs private
+
+score
+
+judejimas paddle1
+koordinaciu sistema <--x--> ir y
+Input.GetKey
+judinimas ir transform keitimas
+Time.deltaTime (kodel butu bloga be to)
+paddle2
+
+gamemanager
+nuorodos i kitus scriptus
+gamestatemanager
+gameObject setactive
+
+ball
+movement with direction
+random range
+random direction
+new game ir callas
+on triggerenter(2d)
+debug.log()
+gameObject.layer == LayerMask.NameToLayer("GameOver")
+
+kas blogai
+state'u milijonas, atsiminti sunku
+nera end game'o
+paddle labai daug besikartojanciu eiluciu REUSE!!!!
+teoriskai gali ball isrolinti 0, 1, ir tada vertikaliai musinesis
+greicio vektorius nera 1. Jis buna letesnis. jei 1,1 bus greiciau nei 1,0
+
+gamemanager, ivedam enumus
+kas yra enumai
+gamemanager ivedam nuresetinima kai pasiekiam max score
+
+paddle optimisation
+ivedam class instance
+class vs object
+besikartojantis kodas
+isskaidom iki skriptas atsakingas uz viena paddle
+isskaidom, kad vienas kodas atsakingas uz abi puses
+
+ball directionus bent siektiek apdirbti
+
+kas vis dar blogai, nors suma greiciu 1 bet greicio vektorius dar ne
+jei atsitrenkia krastu, vistiek pasikeicia kryptis ir nemirsta
+vis dar referencu daug. pvz kamuoliukas turi referencus i score. Kuo maziau referencu ir kuo daugiau viskas save suhandelina tuo geriau
+
+namu darbai:

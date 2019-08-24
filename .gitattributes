@@ -50,6 +50,7 @@
 
 # Document text #
 #################
+*.ppt binary
 *.odt binary
 
 
