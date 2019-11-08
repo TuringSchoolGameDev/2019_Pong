@@ -6,7 +6,7 @@ namespace Pong3
 {
 	public class Paddle : MonoBehaviour
 	{
-		public GameObject paddle;
+		public Rigidbody2D paddle;
 
 		//we will expose enumerator here in editor. We can choose that keys are needed to move paddle
 		public KeyCode upKey;
@@ -17,9 +17,9 @@ namespace Pong3
 		public float maxHeight;
 		public float minHeight;
 
-		void Update()
+		void FixedUpdate()
 		{
-			Vector3 tmpPosition = paddle.transform.position;
+			Vector3 tmpPosition = paddle.position;
 
 			//a lot less code. because one script can move each paddle separately. We want to reuse as much code as possible! Always!
 			if (Input.GetKey(upKey))
@@ -40,7 +40,7 @@ namespace Pong3
 				tmpPosition.y = maxHeight;
 			}
 
-			paddle.transform.position = tmpPosition;
+			paddle.MovePosition(tmpPosition);
 		}
 	}
 }

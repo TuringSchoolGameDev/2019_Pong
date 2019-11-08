@@ -12,18 +12,21 @@ namespace Pong3
 		public ScoreUI score1;
 		public ScoreUI score2;
 
-		public Vector2 direction;
 		public float speed;
 
 		public void NewGame()
 		{
 			gameObject.transform.position = Vector2.zero;
 
-			direction = Random.onUnitSphere;
-			while (Mathf.Abs(direction.x) < 0.1)
+			Vector2 direction = Random.onUnitSphere.normalized;
+			direction.Normalize();
+			while (Mathf.Abs(direction.x) < 0.2f)
 			{
-				direction = Random.onUnitSphere;
+				direction = Random.onUnitSphere.normalized;
+				direction.Normalize();
 			}
+
+			rigidbody2D.velocity = Vector2.zero;
 			rigidbody2D.AddForce(direction * speed);
 		}
 
